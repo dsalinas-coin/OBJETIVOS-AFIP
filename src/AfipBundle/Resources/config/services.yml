@@ -1,0 +1,16 @@
+services:
+    AfipBundle\Util\ApiConnector: '@api.afip.connector'
+
+
+    api.afip.connector:
+        class: AfipBundle\Util\Connector
+        arguments: [%urls%, "@jms_serializer", "@logger","@translator.default"]
+       # calls:
+       #     - method: setTranslator
+       #       arguments:
+       #           - '@translator.default'
+
+
+    app.apiproblem:
+       class: AfipBundle\Util\ApiProblem
+       arguments: ["@translator.default"]

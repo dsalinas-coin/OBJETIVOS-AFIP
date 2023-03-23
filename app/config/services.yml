@@ -1,0 +1,68 @@
+# Learn more about services, parameters and containers at
+# https://symfony.com/doc/current/service_container.html
+parameters:
+    #parameter_name: value
+
+services:
+    #service_name:
+    #    class: AppBundle\Directory\ClassName
+    #    arguments: ['@another_service_name', 'plain_value', '%parameter_name%']
+
+    generatransferenciaspf_command:
+        class: AppBundle\Command\GenerarTransferenciasPagofacilCommand
+        arguments:  [ @service_container,@api.afip.connector]
+        tags:
+            -  { name: console.command }
+
+    generaretencionespf_command:
+        class: AppBundle\Command\GenerarRetencionesPagofacilCommand
+        arguments:  [ @service_container,@api.afip.connector]
+        tags:
+            -  { name: console.command }
+
+    generatransferenciastj_command:
+        class: AppBundle\Command\GenerarTransferenciasTarjetasCommand
+        arguments:  [ @service_container,@api.afip.connector]
+        tags:
+            -  { name: console.command }
+
+    zzgeneratransferenciastj_command:
+        class: AppBundle\Command\ZzdummyGenerarTransferenciasTarjetasCommand
+        arguments:  [ @service_container]
+        tags:
+            -  { name: console.command }
+
+    enviatransferenciaspf_command:
+        class: AppBundle\Command\EnviaTransferenciasPagofacilCommand
+        arguments:  [ @service_container]
+        tags:
+            -  { name: console.command }
+
+    enviatransferenciastj_command:
+        class: AppBundle\Command\EnviaTransferenciasTarjetasCommand
+        arguments:  [ @service_container]
+        tags:
+            -  { name: console.command }
+
+    generarchivotransferenciaspf_command:
+        class: AppBundle\Command\GenerarArchivoTransferenciasPagofacilCommand
+        arguments:  [ @service_container]
+        tags:
+            -  { name: console.command }
+
+    generarchivotransferenciastj_command:
+        class: AppBundle\Command\GenerarArchivoTransferenciasTarjetasCommand
+        arguments:  [ @service_container]
+        tags:
+            -  { name: console.command }
+    updateclientes_command:
+        class: AppBundle\Command\UpdateClientesCommand
+        arguments:  [ @service_container,@api.afip.connector]
+        tags:
+            -  { name: console.command }
+
+    test_command:
+        class: AppBundle\Command\TestCommand
+        arguments:  [ @service_container,@api.afip.connector]
+        tags:
+            -  { name: console.command }

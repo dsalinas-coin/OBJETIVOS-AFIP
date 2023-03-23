@@ -1,0 +1,26 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: \Realestate\MssqlBundle\Driver\PDODblib\Driver
+    driver_class: \Realestate\MssqlBundle\Driver\PDODblib\Driver
+    database_host: 192.168.100.6
+    database_port: 1433
+    database_name: cdpnew
+    database_user: cdpnew
+    database_password: cdp2005
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    mailer_port: 587
+    emails_to: 'maximilianotejada@gmail.com'
+    mailer_encryption: tls
+
+    secret: 33d4cbd149277e51c5436bbd06a7e7c4c71362cd
+    url_apigw: 'http://gwsandbox.pagospyme.com/commissions'
+    urls:
+        sire:
+            token: 'https://afip.api.pagospyme.com/company_webservices/4'
+            wsdl: 'https://ws-aplicativos-reca.afip.gob.ar/sire/ws/v1/c2005/2005?wsdl'
+        padron:
+            token: 'https://afip.api.pagospyme.com/company_webservices/3'
+            wsdl: 'https://aws.afip.gov.ar/sr-padron/webservices/personaServiceA5?WSDL'

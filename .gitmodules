@@ -1,0 +1,3 @@
+[submodule "src/AfipBundle"]
+	path = src/AfipBundle
+	url = ssh://git@bitbucket.cajadepagos.com:7999/gen/bundle-afip.git
